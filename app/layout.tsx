@@ -2,13 +2,39 @@ import type { Metadata } from 'next'
 import './globals.css'
 
 export const metadata: Metadata = {
-  title: 'Kyle | Freelance Web Developer',
-  description: 'Custom websites for entrepreneur, professionals, and businesses.',
-  generator: 'v0.dev',
+  title: 'Kyle Cachia | Freelance Web Developer',
+  description: 'Custom websites for entrepreneurs, professionals, and businesses.',
+  keywords: ['Freelance', 'Web Developer', 'Custom Websites', 'Responsive Design', 'SEO'],
+  authors: [{ name: 'Kyle Cachia' }],
+  generator: 'Next.js',
+  metadataBase: new URL('https://v0-kyle-s-landing-page.vercel.app'),
+  openGraph: {
+    title: 'Kyle Cachia | Freelance Web Developer',
+    description: 'Professional websites tailored for businesses and entrepreneurs.',
+    url: 'https://v0-kyle-s-landing-page.vercel.app',
+    siteName: 'Kyle Cachia Portfolio',
+    images: [
+      {
+        url: '/og-image.png', // place this in /public
+        width: 1200,
+        height: 630,
+        alt: 'Kyle Cachia Freelance Portfolio',
+      },
+    ],
+    locale: 'en_US',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Kyle Cachia | Freelance Web Developer',
+    description: 'I build custom, SEO-friendly websites for professionals.',
+    images: ['/og-image.png'],
+  },
   verification: {
     google: 'ODbmiq3jx1AAEfIkie2FEhL4-W1KjzkOZE9_vfBK3qU',
   },
 }
+
 
 export default function RootLayout({
   children,
