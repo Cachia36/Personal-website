@@ -10,9 +10,11 @@ import { Badge } from "@/components/ui/badge"
 import {
   Menu,
   X,
-  Code,
+  Palette,
   Smartphone,
-  Zap,
+  Search,
+  Settings,
+  HeadphonesIcon,
   ExternalLink,
   Mail,
   Phone,
@@ -21,6 +23,7 @@ import {
   ArrowRight,
   MousePointer,
   Sparkles,
+  CheckCircle,
 } from "lucide-react"
 import Image from "next/image"
 
@@ -34,6 +37,7 @@ export default function KylePortfolio() {
     email: "",
     message: "",
   })
+  const [isSubmitted, setIsSubmitted] = useState(false)
 
   // Mouse tracking for interactive elements
   useEffect(() => {
@@ -73,7 +77,13 @@ export default function KylePortfolio() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
     console.log("Form submitted:", formData)
+    setIsSubmitted(true)
     setFormData({ name: "", email: "", message: "" })
+
+    // Reset confirmation message after 5 seconds
+    setTimeout(() => {
+      setIsSubmitted(false)
+    }, 5000)
   }
 
   const scrollToSection = (sectionId: string) => {
@@ -191,30 +201,30 @@ export default function KylePortfolio() {
                   Freelance Web Developer
                 </Badge>
                 <h1 className="text-4xl sm:text-5xl lg:text-7xl font-bold text-white leading-tight">
-                  Custom Websites for{" "}
+                  Custom Websites.{" "}
                   <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 animate-gradient-x">
-                    Small Businesses
+                    No Limits.
                   </span>
                 </h1>
                 <p className="text-xl text-gray-300 leading-relaxed">
-                  I help small businesses establish their online presence with beautiful, fast, and mobile-friendly
-                  websites that convert visitors into customers.
+                  I create custom websites for entrepreneurs, professionals, and businesses—responsive, SEO‑friendly,
+                  and built to grow your online presence.
                 </p>
               </div>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button
-                  onClick={() => scrollToSection("portfolio")}
+                  onClick={() => scrollToSection("contact")}
                   className="bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white px-8 py-4 text-lg group transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-blue-500/25"
                 >
-                  View My Work
+                  Let's Build Your Site
                   <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
                 </Button>
                 <Button
                   variant="outline"
-                  onClick={() => scrollToSection("contact")}
+                  onClick={() => scrollToSection("portfolio")}
                   className="border-white/30 text-white hover:bg-white/10 px-8 py-4 text-lg backdrop-blur-sm transition-all duration-300 hover:scale-105 hover:border-blue-400"
                 >
-                  Get In Touch
+                  View My Work
                 </Button>
               </div>
             </div>
@@ -256,36 +266,48 @@ export default function KylePortfolio() {
             <Badge className="bg-purple-500/20 text-purple-300 border-purple-400/30 hover:bg-purple-500/30 transition-all duration-300 hover:scale-105">
               Services
             </Badge>
-            <h2 className="text-4xl sm:text-5xl font-bold text-white">What I Offer</h2>
+            <h2 className="text-4xl sm:text-5xl font-bold text-white">Services</h2>
             <p className="text-xl text-gray-300 max-w-2xl mx-auto">
-              Comprehensive web development services tailored for small businesses
+              Comprehensive web development services tailored for entrepreneurs, professionals, and businesses
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
               {
-                icon: Code,
-                title: "Custom Websites",
-                desc: "Tailored websites built from scratch to match your brand and business needs perfectly.",
+                icon: Palette,
+                title: "Custom Design",
+                desc: "Tailored to your brand identity",
                 color: "blue",
               },
               {
                 icon: Smartphone,
-                title: "Mobile-Friendly Design",
-                desc: "Responsive designs that look and work perfectly on all devices, from phones to desktops.",
+                title: "Mobile-First",
+                desc: "Looks great on any device",
                 color: "green",
               },
               {
-                icon: Zap,
-                title: "Fast Delivery",
-                desc: "Quick turnaround times without compromising quality. Get your website live in weeks, not months.",
+                icon: Search,
+                title: "SEO-Optimized",
+                desc: "Helps you get found online",
                 color: "purple",
+              },
+              {
+                icon: Settings,
+                title: "CMS Integration",
+                desc: "Easy updates with Sanity or Contentful",
+                color: "pink",
+              },
+              {
+                icon: HeadphonesIcon,
+                title: "Ongoing Support",
+                desc: "For updates and maintenance",
+                color: "indigo",
               },
             ].map((service, index) => (
               <Card
                 key={index}
-                className={`border-0 bg-white/5 backdrop-blur-lg border border-white/10 hover:bg-white/10 transition-all duration-500 transform hover:-translate-y-4 hover:rotate-1 group cursor-pointer ${visibleSections.includes("services") ? "animate-in slide-in-from-bottom duration-1000" : "opacity-0"}`}
+                className={`border-0 bg-white/5 backdrop-blur-lg border border-white/10 hover:bg-white/10 transition-all duration-500 transform hover:-translate-y-4 hover:rotate-1 group cursor-pointer ${visibleSections.includes("services") ? "animate-in slide-in-from-bottom duration-1000" : "opacity-0"} ${index === 4 ? "md:col-span-2 lg:col-span-1" : ""}`}
                 style={{ animationDelay: `${index * 200}ms` }}
               >
                 <CardContent className="p-8 text-center space-y-4">
@@ -318,29 +340,39 @@ export default function KylePortfolio() {
             </Badge>
             <h2 className="text-4xl sm:text-5xl font-bold text-white">Recent Projects</h2>
             <p className="text-xl text-gray-300 max-w-2xl mx-auto">
-              Take a look at some of the websites I've built for small businesses
+              Take a look at some of the websites I've built for entrepreneurs, professionals, and businesses
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-8">
             {[
               {
                 title: "Bella's Restaurant",
                 desc: "Modern restaurant website with online menu and reservation system.",
+                result: "Increased online bookings by 60%",
                 tags: ["React", "Tailwind", "Next.js"],
                 gradient: "from-blue-400 to-blue-600",
               },
               {
                 title: "FitLife Studio",
                 desc: "Fitness studio website with class schedules and membership signup.",
+                result: "Boosted membership signups by 45%",
                 tags: ["Vue.js", "CSS3", "Node.js"],
                 gradient: "from-green-400 to-green-600",
               },
               {
                 title: "Chic Boutique",
                 desc: "E-commerce website for a local boutique with online shopping cart.",
+                result: "Increased online sales by 50%",
                 tags: ["Shopify", "JavaScript", "Stripe"],
                 gradient: "from-purple-400 to-purple-600",
+              },
+              {
+                title: "TechStart Solutions",
+                desc: "Professional consulting website with lead generation forms.",
+                result: "Generated 200% more qualified leads",
+                tags: ["Next.js", "Sanity", "TypeScript"],
+                gradient: "from-orange-400 to-orange-600",
               },
             ].map((project, index) => (
               <Card
@@ -364,6 +396,10 @@ export default function KylePortfolio() {
                     {project.title}
                   </h3>
                   <p className="text-gray-300">{project.desc}</p>
+                  <div className="flex items-center space-x-2 text-green-400">
+                    <CheckCircle className="w-4 h-4" />
+                    <span className="text-sm font-medium">{project.result}</span>
+                  </div>
                   <div className="flex flex-wrap gap-2">
                     {project.tags.map((tag, tagIndex) => (
                       <Badge
@@ -407,33 +443,33 @@ export default function KylePortfolio() {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
               {
-                name: "Maria Rodriguez",
-                role: "Owner, Bella's Restaurant",
-                initials: "MR",
+                name: "Anna Smith",
+                role: "Wellness Coach",
+                initials: "AS",
                 quote:
-                  "Kyle delivered exactly what we needed for our restaurant. The website is beautiful, fast, and our customers love the online reservation system. Highly recommended!",
+                  "Kyle built us a sleek, fast site that boosted our bookings by 40%. Great communication and turnaround.",
                 color: "blue",
               },
               {
-                name: "James Thompson",
-                role: "Manager, FitLife Studio",
-                initials: "JT",
+                name: "Marcus Johnson",
+                role: "Restaurant Owner",
+                initials: "MJ",
                 quote:
-                  "Working with Kyle was a breeze. He understood our vision perfectly and delivered a website that has significantly increased our online bookings.",
+                  "Our new website is stunning and functional. Online orders increased by 65% in the first month. Highly recommend Kyle!",
                 color: "green",
               },
               {
                 name: "Sarah Chen",
-                role: "Owner, Chic Boutique",
+                role: "E-commerce Entrepreneur",
                 initials: "SC",
                 quote:
-                  "Kyle's attention to detail is incredible. Our e-commerce site looks amazing and works flawlessly. Sales have increased by 40% since launch!",
+                  "Kyle's attention to detail is incredible. Our e-commerce site looks amazing and works flawlessly. Sales increased by 50% since launch!",
                 color: "purple",
               },
             ].map((testimonial, index) => (
               <Card
                 key={index}
-                className={`border-0 bg-white/5 backdrop-blur-lg border border-white/10 group cursor-pointer transition-all duration-500 hover:scale-105 hover:rotate-1 ${visibleSections.includes("testimonials") ? "animate-in slide-in-from-bottom duration-1000" : "opacity-0"} ${index === 2 ? "md:col-span-2 lg:col-span-1" : ""}`}
+                className={`border-0 bg-white/5 backdrop-blur-lg border border-white/10 group cursor-pointer transition-all duration-500 hover:scale-105 hover:rotate-1 ${visibleSections.includes("testimonials") ? "animate-in slide-in-from-bottom duration-1000" : "opacity-0"}`}
                 style={{ animationDelay: `${index * 200}ms` }}
               >
                 <CardContent className="p-8 space-y-6">
@@ -478,7 +514,7 @@ export default function KylePortfolio() {
             <Badge className="bg-green-500/20 text-green-300 border-green-400/30 hover:bg-green-500/30 transition-all duration-300 hover:scale-105">
               Contact
             </Badge>
-            <h2 className="text-4xl sm:text-5xl font-bold text-white">Let's Work Together</h2>
+            <h2 className="text-4xl sm:text-5xl font-bold text-white">Let's Create Something Great Together</h2>
             <p className="text-xl text-gray-300 max-w-2xl mx-auto">
               Ready to take your business online? Get in touch and let's discuss your project.
             </p>
@@ -515,57 +551,65 @@ export default function KylePortfolio() {
               className={`border-0 bg-white/5 backdrop-blur-lg border border-white/10 ${visibleSections.includes("contact") ? "animate-in slide-in-from-right duration-1000" : "opacity-0"}`}
             >
               <CardContent className="p-8">
-                <form onSubmit={handleSubmit} className="space-y-6">
-                  <div>
-                    <label htmlFor="name" className="block text-sm font-medium text-gray-300 mb-2">
-                      Name
-                    </label>
-                    <Input
-                      id="name"
-                      type="text"
-                      value={formData.name}
-                      onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                      placeholder="Your name"
-                      required
-                      className="bg-white/5 border-white/20 text-white placeholder:text-gray-400 focus:border-blue-400 focus:ring-blue-400/20 transition-all duration-300 hover:bg-white/10"
-                    />
+                {isSubmitted ? (
+                  <div className="text-center space-y-4 py-8">
+                    <CheckCircle className="w-16 h-16 text-green-400 mx-auto animate-bounce" />
+                    <h3 className="text-2xl font-semibold text-white">Thanks, I'll be in touch soon!</h3>
+                    <p className="text-gray-300">Your message has been sent successfully.</p>
                   </div>
-                  <div>
-                    <label htmlFor="email" className="block text-sm font-medium text-gray-300 mb-2">
-                      Email
-                    </label>
-                    <Input
-                      id="email"
-                      type="email"
-                      value={formData.email}
-                      onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                      placeholder="your@email.com"
-                      required
-                      className="bg-white/5 border-white/20 text-white placeholder:text-gray-400 focus:border-blue-400 focus:ring-blue-400/20 transition-all duration-300 hover:bg-white/10"
-                    />
-                  </div>
-                  <div>
-                    <label htmlFor="message" className="block text-sm font-medium text-gray-300 mb-2">
-                      Message
-                    </label>
-                    <Textarea
-                      id="message"
-                      value={formData.message}
-                      onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                      placeholder="Tell me about your project..."
-                      rows={4}
-                      required
-                      className="bg-white/5 border-white/20 text-white placeholder:text-gray-400 focus:border-blue-400 focus:ring-blue-400/20 transition-all duration-300 hover:bg-white/10"
-                    />
-                  </div>
-                  <Button
-                    type="submit"
-                    className="w-full bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white py-3 transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-blue-500/25 group"
-                  >
-                    Send Message
-                    <MousePointer className="w-4 h-4 ml-2 group-hover:rotate-12 transition-transform" />
-                  </Button>
-                </form>
+                ) : (
+                  <form onSubmit={handleSubmit} className="space-y-6">
+                    <div>
+                      <label htmlFor="name" className="block text-sm font-medium text-gray-300 mb-2">
+                        Name
+                      </label>
+                      <Input
+                        id="name"
+                        type="text"
+                        value={formData.name}
+                        onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                        placeholder="Your name"
+                        required
+                        className="bg-white/5 border-white/20 text-white placeholder:text-gray-400 focus:border-blue-400 focus:ring-blue-400/20 transition-all duration-300 hover:bg-white/10"
+                      />
+                    </div>
+                    <div>
+                      <label htmlFor="email" className="block text-sm font-medium text-gray-300 mb-2">
+                        Email
+                      </label>
+                      <Input
+                        id="email"
+                        type="email"
+                        value={formData.email}
+                        onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                        placeholder="your@email.com"
+                        required
+                        className="bg-white/5 border-white/20 text-white placeholder:text-gray-400 focus:border-blue-400 focus:ring-blue-400/20 transition-all duration-300 hover:bg-white/10"
+                      />
+                    </div>
+                    <div>
+                      <label htmlFor="message" className="block text-sm font-medium text-gray-300 mb-2">
+                        Message
+                      </label>
+                      <Textarea
+                        id="message"
+                        value={formData.message}
+                        onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                        placeholder="Tell me about your project..."
+                        rows={4}
+                        required
+                        className="bg-white/5 border-white/20 text-white placeholder:text-gray-400 focus:border-blue-400 focus:ring-blue-400/20 transition-all duration-300 hover:bg-white/10"
+                      />
+                    </div>
+                    <Button
+                      type="submit"
+                      className="w-full bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white py-3 transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-blue-500/25 group"
+                    >
+                      Send Message
+                      <MousePointer className="w-4 h-4 ml-2 group-hover:rotate-12 transition-transform" />
+                    </Button>
+                  </form>
+                )}
               </CardContent>
             </Card>
           </div>
@@ -580,7 +624,7 @@ export default function KylePortfolio() {
               Kyle<span className="text-blue-400">.</span>
             </div>
             <p className="text-gray-400">
-              Freelance Web Developer specializing in custom websites for small businesses
+              Freelance Web Developer specializing in custom websites for entrepreneurs, professionals, and businesses
             </p>
             <div className="border-t border-white/10 pt-8">
               <p className="text-gray-500">© {new Date().getFullYear()} Kyle. All rights reserved.</p>
