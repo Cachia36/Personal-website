@@ -38,7 +38,13 @@ export default function KylePortfolio() {
     message: "",
   })
   const [isSubmitted, setIsSubmitted] = useState(false)
+  const [bouncing, setBouncing] = useState(true)
 
+  // Stop bouncing after 3 seconds
+  useEffect(() => {
+    const timer = setTimeout(() => setBouncing(false), 3000)
+    return () => clearTimeout(timer)
+  }, [])
   // Mouse tracking for interactive elements
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
@@ -74,16 +80,27 @@ export default function KylePortfolio() {
     return () => observer.disconnect()
   }, [])
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    console.log("Form submitted:", formData)
-    setIsSubmitted(true)
-    setFormData({ name: "", email: "", message: "" })
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      })
 
-    // Reset confirmation message after 5 seconds
-    setTimeout(() => {
+      if (!res.ok) throw new Error('Failed to send email')
+      
+      setIsSubmitted(true)
+      setFormData({ name: '', email: '', message: ''})
+
+      setTimeout(() => {
       setIsSubmitted(false)
     }, 5000)
+    } catch (error) {
+      console.error('Error submitting form:', error)
+      alert('Failed to send message. Please try again later.')
+    }
   }
 
   const scrollToSection = (sectionId: string) => {
@@ -196,7 +213,11 @@ export default function KylePortfolio() {
               className={`space-y-8 ${visibleSections.includes("home") ? "animate-in slide-in-from-left duration-1000" : "opacity-0"}`}
             >
               <div className="space-y-6">
-                <Badge className="bg-blue-500/20 text-blue-300 border-blue-400/30 hover:bg-blue-500/30 transition-all duration-300 hover:scale-105 animate-bounce">
+                <Badge
+                  className={`bg-blue-500/20 text-blue-300 border-blue-400/30 hover:bg-blue-500/30 transition-all duration-300 hover:scale-105 ${
+                    bouncing ? "animate-bounce" : ""
+                  }`}
+                >
                   <Sparkles className="w-4 h-4 mr-2" />
                   Freelance Web Developer
                 </Badge>
@@ -527,8 +548,8 @@ export default function KylePortfolio() {
               <div className="space-y-6">
                 {[
                   { icon: Mail, title: "Email", value: "kyle@webdev.com", color: "blue" },
-                  { icon: Phone, title: "Phone", value: "(555) 123-4567", color: "green" },
-                  { icon: MapPin, title: "Location", value: "San Francisco, CA", color: "purple" },
+                  { icon: Phone, title: "Phone", value: "+356 79264233", color: "green" },
+                  { icon: MapPin, title: "Location", value: "Valletta, Malta", color: "purple" },
                 ].map((contact, index) => (
                   <div key={index} className="flex items-center space-x-4 group cursor-pointer">
                     <div
