@@ -19,9 +19,9 @@ export default function Logo({ className = "", size = "md" }: LogoProps) {
           {/* Outer ring with gradient */}
           <defs>
             <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stopColor="#3B82F6" />
-              <stop offset="50%" stopColor="#8B5CF6" />
-              <stop offset="100%" stopColor="#EC4899" />
+              <stop offset="0%" stopColor="#DC2626" />
+              <stop offset="50%" stopColor="#EF4444" />
+              <stop offset="100%" stopColor="#F87171" />
             </linearGradient>
             <filter id="glow">
               <feGaussianBlur stdDeviation="2" result="coloredBlur" />
@@ -65,15 +65,15 @@ export default function Logo({ className = "", size = "md" }: LogoProps) {
           />
 
           {/* Small dots for tech feel */}
-          <circle cx="15" cy="12" r="1" fill="#3B82F6" opacity="0.6" />
-          <circle cx="25" cy="28" r="1" fill="#8B5CF6" opacity="0.6" />
-          <circle cx="30" cy="18" r="1" fill="#EC4899" opacity="0.6" />
+          <circle cx="15" cy="12" r="1" fill="#DC2626" opacity="0.6" />
+          <circle cx="25" cy="28" r="1" fill="#EF4444" opacity="0.6" />
+          <circle cx="30" cy="18" r="1" fill="#F87171" opacity="0.6" />
         </svg>
       </div>
 
       <div className="flex flex-col">
         <span className="font-bold text-lg leading-none text-white">Kyle</span>
-        <span className="text-xs text-blue-400 leading-none">Developer</span>
+        <span className="text-xs text-red-400 leading-none">Developer</span>
       </div>
     </div>
   )
