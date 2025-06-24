@@ -18,7 +18,6 @@ import {
   ExternalLink,
   Mail,
   Phone,
-  MapPin,
   Star,
   ArrowRight,
   MousePointer,
@@ -28,6 +27,7 @@ import {
   Linkedin,
 } from "lucide-react"
 import Image from "next/image"
+import Logo from "@/components/logo"
 
 export default function KylePortfolio() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -148,9 +148,7 @@ export default function KylePortfolio() {
       <nav className="fixed top-0 w-full bg-white/10 backdrop-blur-lg border-b border-white/20 z-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
-            <div className="font-bold text-2xl text-white animate-pulse">
-              Kyle<span className="text-blue-400">.</span>
-            </div>
+            <Logo className="animate-pulse" />
 
             {/* Desktop Navigation */}
             <div className="hidden md:flex space-x-8">
@@ -680,9 +678,7 @@ export default function KylePortfolio() {
       <footer className="bg-black/50 backdrop-blur-lg border-t border-white/10 text-white py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center space-y-6">
-            <div className="font-bold text-3xl animate-pulse">
-              Kyle<span className="text-blue-400">.</span>
-            </div>
+            <Logo size="lg" />
             <p className="text-gray-400">
               Freelance Web Developer specializing in custom websites for entrepreneurs, professionals, and businesses
             </p>
