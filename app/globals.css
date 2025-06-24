@@ -69,8 +69,14 @@
   100% {
     background-position: 0% 50%;
   }
+  25% {
+    background-position: 100% 25%;
+  }
   50% {
-    background-position: 100% 50%;
+    background-position: 100% 75%;
+  }
+  75% {
+    background-position: 0% 75%;
   }
 }
 
@@ -88,7 +94,7 @@
   }
 }
 
-/* Custom scrollbar */
+/* Custom scrollbar with cyan accent */
 ::-webkit-scrollbar {
   width: 8px;
 }
@@ -98,10 +104,10 @@
 }
 
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(45deg, #2563eb, #3b82f6);
+  background: linear-gradient(45deg, #06b6d4, #2563eb, #14b8a6);
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(45deg, #1d4ed8, #2563eb);
+  background: linear-gradient(45deg, #0891b2, #1d4ed8, #0d9488);
 }

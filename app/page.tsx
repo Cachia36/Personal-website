@@ -244,7 +244,7 @@ export default function KylePortfolio() {
                 <Button
                   variant="outline"
                   onClick={() => scrollToSection("portfolio")}
-                  className="border-white/30 text-white hover:bg-white/10 px-8 py-4 text-lg backdrop-blur-sm transition-all duration-300 hover:scale-105 hover:border-blue-400"
+                  className="border-cyan-400/50 text-cyan-300 hover:bg-cyan-500/10 hover:border-cyan-400 px-8 py-4 text-lg backdrop-blur-sm transition-all duration-300 hover:scale-105"
                 >
                   View My Work
                 </Button>
@@ -285,7 +285,7 @@ export default function KylePortfolio() {
           <div
             className={`text-center space-y-4 mb-16 ${visibleSections.includes("services") ? "animate-in fade-in-50 slide-in-from-bottom duration-1000" : "opacity-0"}`}
           >
-            <Badge className="bg-blue-500/20 text-blue-300 border-blue-400/30 hover:bg-blue-500/30 transition-all duration-300 hover:scale-105">
+            <Badge className="bg-cyan-500/20 text-cyan-300 border-cyan-400/30 hover:bg-cyan-500/30 transition-all duration-300 hover:scale-105">
               Services
             </Badge>
             <h2 className="text-4xl sm:text-5xl font-bold text-white">Services</h2>
@@ -300,7 +300,7 @@ export default function KylePortfolio() {
                 icon: Palette,
                 title: "Custom Design",
                 desc: "Tailored to your brand identity",
-                color: "blue",
+                color: "cyan",
               },
               {
                 icon: Smartphone,
@@ -312,19 +312,19 @@ export default function KylePortfolio() {
                 icon: Search,
                 title: "SEO-Optimized",
                 desc: "Helps you get found online",
-                color: "yellow",
+                color: "teal",
               },
               {
                 icon: Settings,
                 title: "CMS Integration",
                 desc: "Easy updates with Sanity or Contentful",
-                color: "green",
+                color: "cyan",
               },
               {
                 icon: HeadphonesIcon,
                 title: "Ongoing Support",
                 desc: "For updates and maintenance",
-                color: "blue",
+                color: "teal",
               },
             ].map((service, index) => (
               <Card
@@ -357,7 +357,7 @@ export default function KylePortfolio() {
           <div
             className={`text-center space-y-4 mb-16 ${visibleSections.includes("portfolio") ? "animate-in fade-in-50 slide-in-from-bottom duration-1000" : "opacity-0"}`}
           >
-            <Badge className="bg-blue-500/20 text-blue-300 border-blue-400/30 hover:bg-blue-500/30 transition-all duration-300 hover:scale-105">
+            <Badge className="bg-teal-500/20 text-teal-300 border-teal-400/30 hover:bg-teal-500/30 transition-all duration-300 hover:scale-105">
               Portfolio
             </Badge>
             <h2 className="text-4xl sm:text-5xl font-bold text-white">Recent Projects</h2>
@@ -373,7 +373,7 @@ export default function KylePortfolio() {
                 desc: "Modern restaurant website with online menu and reservation system.",
                 result: "Increased online bookings by 60%",
                 tags: ["React", "Tailwind", "Next.js"],
-                gradient: "from-blue-400 to-blue-600",
+                gradient: "from-cyan-400 to-blue-600",
               },
               {
                 title: "FitLife Studio",
@@ -387,14 +387,14 @@ export default function KylePortfolio() {
                 desc: "E-commerce website for a local boutique with online shopping cart.",
                 result: "Increased online sales by 50%",
                 tags: ["Shopify", "JavaScript", "Stripe"],
-                gradient: "from-yellow-400 to-yellow-600",
+                gradient: "from-teal-400 to-cyan-600",
               },
               {
                 title: "TechStart Solutions",
                 desc: "Professional consulting website with lead generation forms.",
                 result: "Generated 200% more qualified leads",
                 tags: ["Next.js", "Sanity", "TypeScript"],
-                gradient: "from-green-400 to-green-600",
+                gradient: "from-blue-400 to-teal-600",
               },
             ].map((project, index) => (
               <Card
@@ -470,7 +470,7 @@ export default function KylePortfolio() {
                 initials: "AS",
                 quote:
                   "Kyle built us a sleek, fast site that boosted our bookings by 40%. Great communication and turnaround.",
-                color: "red",
+                color: "cyan",
               },
               {
                 name: "Marcus Johnson",
@@ -478,7 +478,7 @@ export default function KylePortfolio() {
                 initials: "MJ",
                 quote:
                   "Our new website is stunning and functional. Online orders increased by 65% in the first month. Highly recommend Kyle!",
-                color: "orange",
+                color: "teal",
               },
               {
                 name: "Sarah Chen",
@@ -486,7 +486,7 @@ export default function KylePortfolio() {
                 initials: "SC",
                 quote:
                   "Kyle's attention to detail is incredible. Our e-commerce site looks amazing and works flawlessly. Sales increased by 50% since launch!",
-                color: "yellow",
+                color: "cyan",
               },
             ].map((testimonial, index) => (
               <Card
@@ -533,7 +533,7 @@ export default function KylePortfolio() {
           <div
             className={`text-center space-y-4 mb-16 ${visibleSections.includes("contact") ? "animate-in fade-in-50 slide-in-from-bottom duration-1000" : "opacity-0"}`}
           >
-            <Badge className="bg-blue-500/20 text-blue-300 border-blue-400/30 hover:bg-blue-500/30 transition-all duration-300 hover:scale-105">
+            <Badge className="bg-cyan-500/20 text-cyan-300 border-cyan-400/30 hover:bg-cyan-500/30 transition-all duration-300 hover:scale-105">
               Contact
             </Badge>
             <h2 className="text-4xl sm:text-5xl font-bold text-white">Let's Create Something Great Together</h2>
@@ -552,10 +552,10 @@ export default function KylePortfolio() {
                     icon: Mail,
                     title: "Email",
                     value: "kyle@webdev.com",
-                    color: "blue",
+                    color: "cyan",
                     href: "mailto:kyle@webdev.com",
                   },
-                  { icon: Phone, title: "Phone", value: "+356 79264233", color: "orange", href: "tel:+35679264233" },
+                  { icon: Phone, title: "Phone", value: "+356 79264233", color: "teal", href: "tel:+35679264233" },
                   {
                     icon: MessageCircle,
                     title: "Messenger",
@@ -581,7 +581,7 @@ export default function KylePortfolio() {
                     icon: Github,
                     title: "GitHub",
                     value: "View my code",
-                    color: "gray",
+                    color: "cyan",
                     href: "https://github.com/Cachia36",
                   },
                 ].map((contact, index) => (
