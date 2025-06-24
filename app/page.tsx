@@ -120,7 +120,7 @@ export default function KylePortfolio() {
       {[...Array(20)].map((_, i) => (
         <div
           key={i}
-          className="absolute w-2 h-2 bg-red-400 rounded-full opacity-20 animate-pulse"
+          className="absolute w-2 h-2 bg-blue-400 rounded-full opacity-20 animate-pulse"
           style={{
             left: `${Math.random() * 100}%`,
             top: `${Math.random() * 100}%`,
@@ -140,13 +140,13 @@ export default function KylePortfolio() {
       <div
         className="fixed inset-0 opacity-30"
         style={{
-          background: `radial-gradient(circle at ${mousePosition.x}px ${mousePosition.y}px, rgba(220, 38, 38, 0.3) 0%, transparent 50%)`,
+          background: `radial-gradient(circle at ${mousePosition.x}px ${mousePosition.y}px, rgba(37, 99, 235, 0.3) 0%, transparent 50%)`,
           transition: "background 0.3s ease",
         }}
       />
 
       {/* Sticky Navigation with glassmorphism */}
-      <nav className="fixed top-0 w-full bg-black/80 backdrop-blur-lg border-b border-red-500/20 z-50">
+      <nav className="fixed top-0 w-full bg-black/80 backdrop-blur-lg border-b border-blue-500/20 z-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             <Logo className="animate-pulse" />
@@ -157,10 +157,10 @@ export default function KylePortfolio() {
                 <button
                   key={section}
                   onClick={() => scrollToSection(section)}
-                  className="text-white/80 hover:text-red-400 transition-all duration-300 hover:scale-110 capitalize relative group"
+                  className="text-white/80 hover:text-blue-400 transition-all duration-300 hover:scale-110 capitalize relative group"
                 >
                   {section}
-                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-red-400 transition-all duration-300 group-hover:w-full" />
+                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-400 transition-all duration-300 group-hover:w-full" />
                 </button>
               ))}
             </div>
@@ -169,7 +169,7 @@ export default function KylePortfolio() {
             <div className="md:hidden">
               <button
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
-                className="text-white hover:text-red-400 transition-all duration-300 hover:rotate-180"
+                className="text-white hover:text-blue-400 transition-all duration-300 hover:rotate-180"
               >
                 {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
               </button>
@@ -178,13 +178,13 @@ export default function KylePortfolio() {
 
           {/* Mobile Navigation */}
           {isMenuOpen && (
-            <div className="md:hidden bg-black/90 backdrop-blur-lg border-t border-red-500/20 animate-in slide-in-from-top duration-300">
+            <div className="md:hidden bg-black/90 backdrop-blur-lg border-t border-blue-500/20 animate-in slide-in-from-top duration-300">
               <div className="px-2 pt-2 pb-3 space-y-1">
                 {["home", "services", "portfolio", "testimonials", "contact"].map((section) => (
                   <button
                     key={section}
                     onClick={() => scrollToSection(section)}
-                    className="block px-3 py-2 text-white/80 hover:text-red-400 transition-all duration-300 hover:translate-x-2 capitalize"
+                    className="block px-3 py-2 text-white/80 hover:text-blue-400 transition-all duration-300 hover:translate-x-2 capitalize"
                   >
                     {section}
                   </button>
@@ -203,9 +203,9 @@ export default function KylePortfolio() {
             transform: `translateY(${scrollY * 0.5}px)`,
           }}
         >
-          <div className="absolute top-20 left-10 w-72 h-72 bg-red-500 rounded-full mix-blend-multiply filter blur-xl animate-blob" />
-          <div className="absolute top-40 right-10 w-72 h-72 bg-red-600 rounded-full mix-blend-multiply filter blur-xl animate-blob animation-delay-2000" />
-          <div className="absolute bottom-20 left-20 w-72 h-72 bg-red-400 rounded-full mix-blend-multiply filter blur-xl animate-blob animation-delay-4000" />
+          <div className="absolute top-20 left-10 w-72 h-72 bg-blue-500 rounded-full mix-blend-multiply filter blur-xl animate-blob" />
+          <div className="absolute top-40 right-10 w-72 h-72 bg-blue-600 rounded-full mix-blend-multiply filter blur-xl animate-blob animation-delay-2000" />
+          <div className="absolute bottom-20 left-20 w-72 h-72 bg-blue-400 rounded-full mix-blend-multiply filter blur-xl animate-blob animation-delay-4000" />
         </div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 relative z-10">
@@ -215,7 +215,7 @@ export default function KylePortfolio() {
             >
               <div className="space-y-6">
                 <Badge
-                  className={`bg-red-500/20 text-red-300 border-red-400/30 hover:bg-red-500/30 transition-all duration-300 hover:scale-105 ${
+                  className={`bg-blue-500/20 text-blue-300 border-blue-400/30 hover:bg-blue-500/30 transition-all duration-300 hover:scale-105 ${
                     bouncing ? "animate-bounce" : ""
                   }`}
                 >
@@ -224,7 +224,7 @@ export default function KylePortfolio() {
                 </Badge>
                 <h1 className="text-4xl sm:text-5xl lg:text-7xl font-bold text-white leading-tight">
                   Custom Websites.{" "}
-                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-400 via-red-500 to-red-600 animate-gradient-x">
+                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-blue-500 to-blue-600 animate-gradient-x">
                     No Limits.
                   </span>
                 </h1>
@@ -236,7 +236,7 @@ export default function KylePortfolio() {
               <div className="flex flex-col sm:flex-row gap-4">
                 <Button
                   onClick={() => scrollToSection("contact")}
-                  className="bg-gradient-to-r from-red-500 to-red-600 hover:from-red-600 hover:to-red-700 text-white px-8 py-4 text-lg group transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-red-500/25"
+                  className="bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white px-8 py-4 text-lg group transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-blue-500/25"
                 >
                   Let's Build Your Site
                   <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
@@ -244,7 +244,7 @@ export default function KylePortfolio() {
                 <Button
                   variant="outline"
                   onClick={() => scrollToSection("portfolio")}
-                  className="border-white/30 text-white hover:bg-white/10 px-8 py-4 text-lg backdrop-blur-sm transition-all duration-300 hover:scale-105 hover:border-red-400"
+                  className="border-white/30 text-white hover:bg-white/10 px-8 py-4 text-lg backdrop-blur-sm transition-all duration-300 hover:scale-105 hover:border-blue-400"
                 >
                   View My Work
                 </Button>
@@ -254,21 +254,21 @@ export default function KylePortfolio() {
               className={`relative ${visibleSections.includes("home") ? "animate-in slide-in-from-right duration-1000" : "opacity-0"}`}
             >
               <div className="relative group">
-                <div className="absolute -inset-1 bg-gradient-to-r from-red-600 to-red-500 rounded-2xl blur opacity-75 group-hover:opacity-100 transition duration-1000 group-hover:duration-200 animate-tilt" />
-                <div className="relative bg-black/80 backdrop-blur-xl rounded-2xl p-8 border border-red-500/20">
+                <div className="absolute -inset-1 bg-gradient-to-r from-blue-600 to-blue-500 rounded-2xl blur opacity-75 group-hover:opacity-100 transition duration-1000 group-hover:duration-200 animate-tilt" />
+                <div className="relative bg-black/80 backdrop-blur-xl rounded-2xl p-8 border border-blue-500/20">
                   <div className="space-y-4">
                     <div className="flex items-center space-x-2">
-                      <div className="w-3 h-3 bg-red-400 rounded-full animate-pulse" />
+                      <div className="w-3 h-3 bg-blue-400 rounded-full animate-pulse" />
                       <div className="w-3 h-3 bg-yellow-400 rounded-full animate-pulse animation-delay-200" />
                       <div className="w-3 h-3 bg-green-400 rounded-full animate-pulse animation-delay-400" />
                     </div>
                     <div className="space-y-3">
-                      <div className="h-4 bg-gradient-to-r from-red-400 to-red-500 rounded w-3/4 animate-pulse" />
-                      <div className="h-4 bg-gradient-to-r from-red-500 to-red-600 rounded w-1/2 animate-pulse animation-delay-300" />
-                      <div className="h-8 bg-gradient-to-r from-red-500 to-red-600 rounded w-full animate-pulse animation-delay-600" />
+                      <div className="h-4 bg-gradient-to-r from-blue-400 to-blue-500 rounded w-3/4 animate-pulse" />
+                      <div className="h-4 bg-gradient-to-r from-blue-500 to-blue-600 rounded w-1/2 animate-pulse animation-delay-300" />
+                      <div className="h-8 bg-gradient-to-r from-blue-500 to-blue-600 rounded w-full animate-pulse animation-delay-600" />
                       <div className="grid grid-cols-2 gap-2">
-                        <div className="h-16 bg-gradient-to-br from-red-400/20 to-red-500/20 rounded animate-pulse animation-delay-900" />
-                        <div className="h-16 bg-gradient-to-br from-red-500/20 to-red-600/20 rounded animate-pulse animation-delay-1200" />
+                        <div className="h-16 bg-gradient-to-br from-blue-400/20 to-blue-500/20 rounded animate-pulse animation-delay-900" />
+                        <div className="h-16 bg-gradient-to-br from-blue-500/20 to-blue-600/20 rounded animate-pulse animation-delay-1200" />
                       </div>
                     </div>
                   </div>
@@ -285,7 +285,7 @@ export default function KylePortfolio() {
           <div
             className={`text-center space-y-4 mb-16 ${visibleSections.includes("services") ? "animate-in fade-in-50 slide-in-from-bottom duration-1000" : "opacity-0"}`}
           >
-            <Badge className="bg-red-500/20 text-red-300 border-red-400/30 hover:bg-red-500/30 transition-all duration-300 hover:scale-105">
+            <Badge className="bg-blue-500/20 text-blue-300 border-blue-400/30 hover:bg-blue-500/30 transition-all duration-300 hover:scale-105">
               Services
             </Badge>
             <h2 className="text-4xl sm:text-5xl font-bold text-white">Services</h2>
@@ -300,7 +300,7 @@ export default function KylePortfolio() {
                 icon: Palette,
                 title: "Custom Design",
                 desc: "Tailored to your brand identity",
-                color: "red",
+                color: "blue",
               },
               {
                 icon: Smartphone,
@@ -340,7 +340,7 @@ export default function KylePortfolio() {
                       className={`w-8 h-8 text-${service.color}-400 group-hover:text-${service.color}-300`}
                     />
                   </div>
-                  <h3 className="text-xl font-semibold text-white group-hover:text-red-300 transition-colors">
+                  <h3 className="text-xl font-semibold text-white group-hover:text-blue-300 transition-colors">
                     {service.title}
                   </h3>
                   <p className="text-gray-300 group-hover:text-gray-200 transition-colors">{service.desc}</p>
@@ -357,7 +357,7 @@ export default function KylePortfolio() {
           <div
             className={`text-center space-y-4 mb-16 ${visibleSections.includes("portfolio") ? "animate-in fade-in-50 slide-in-from-bottom duration-1000" : "opacity-0"}`}
           >
-            <Badge className="bg-red-500/20 text-red-300 border-red-400/30 hover:bg-red-500/30 transition-all duration-300 hover:scale-105">
+            <Badge className="bg-blue-500/20 text-blue-300 border-blue-400/30 hover:bg-blue-500/30 transition-all duration-300 hover:scale-105">
               Portfolio
             </Badge>
             <h2 className="text-4xl sm:text-5xl font-bold text-white">Recent Projects</h2>
@@ -373,7 +373,7 @@ export default function KylePortfolio() {
                 desc: "Modern restaurant website with online menu and reservation system.",
                 result: "Increased online bookings by 60%",
                 tags: ["React", "Tailwind", "Next.js"],
-                gradient: "from-red-400 to-red-600",
+                gradient: "from-blue-400 to-blue-600",
               },
               {
                 title: "FitLife Studio",
@@ -414,7 +414,7 @@ export default function KylePortfolio() {
                   <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors" />
                 </div>
                 <CardContent className="p-6 space-y-4">
-                  <h3 className="text-xl font-semibold text-white group-hover:text-red-300 transition-colors">
+                  <h3 className="text-xl font-semibold text-white group-hover:text-blue-300 transition-colors">
                     {project.title}
                   </h3>
                   <p className="text-gray-300">{project.desc}</p>
@@ -453,7 +453,7 @@ export default function KylePortfolio() {
           <div
             className={`text-center space-y-4 mb-16 ${visibleSections.includes("testimonials") ? "animate-in fade-in-50 slide-in-from-bottom duration-1000" : "opacity-0"}`}
           >
-            <Badge className="bg-red-500/20 text-red-300 border-red-400/30 hover:bg-red-500/30 transition-all duration-300 hover:scale-105">
+            <Badge className="bg-blue-500/20 text-blue-300 border-blue-400/30 hover:bg-blue-500/30 transition-all duration-300 hover:scale-105">
               Testimonials
             </Badge>
             <h2 className="text-4xl sm:text-5xl font-bold text-white">What Clients Say</h2>
@@ -514,7 +514,7 @@ export default function KylePortfolio() {
                       <span className={`text-${testimonial.color}-300 font-semibold`}>{testimonial.initials}</span>
                     </div>
                     <div>
-                      <p className="font-semibold text-white group-hover:text-red-300 transition-colors">
+                      <p className="font-semibold text-white group-hover:text-blue-300 transition-colors">
                         {testimonial.name}
                       </p>
                       <p className="text-gray-400 text-sm">{testimonial.role}</p>
@@ -533,7 +533,7 @@ export default function KylePortfolio() {
           <div
             className={`text-center space-y-4 mb-16 ${visibleSections.includes("contact") ? "animate-in fade-in-50 slide-in-from-bottom duration-1000" : "opacity-0"}`}
           >
-            <Badge className="bg-red-500/20 text-red-300 border-red-400/30 hover:bg-red-500/30 transition-all duration-300 hover:scale-105">
+            <Badge className="bg-blue-500/20 text-blue-300 border-blue-400/30 hover:bg-blue-500/30 transition-all duration-300 hover:scale-105">
               Contact
             </Badge>
             <h2 className="text-4xl sm:text-5xl font-bold text-white">Let's Create Something Great Together</h2>
@@ -552,7 +552,7 @@ export default function KylePortfolio() {
                     icon: Mail,
                     title: "Email",
                     value: "kyle@webdev.com",
-                    color: "red",
+                    color: "blue",
                     href: "mailto:kyle@webdev.com",
                   },
                   { icon: Phone, title: "Phone", value: "+356 79264233", color: "orange", href: "tel:+35679264233" },
@@ -592,7 +592,7 @@ export default function KylePortfolio() {
                       <contact.icon className={`w-6 h-6 text-${contact.color}-400`} />
                     </div>
                     <div>
-                      <p className="font-semibold text-white group-hover:text-red-300 transition-colors">
+                      <p className="font-semibold text-white group-hover:text-blue-300 transition-colors">
                         {contact.title}
                       </p>
                       {contact.href ? (
@@ -636,7 +636,7 @@ export default function KylePortfolio() {
                         onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                         placeholder="Your name"
                         required
-                        className="bg-black/20 border-white/20 text-white placeholder:text-gray-400 focus:border-red-400 focus:ring-red-400/20 transition-all duration-300 hover:bg-black/30"
+                        className="bg-black/20 border-white/20 text-white placeholder:text-gray-400 focus:border-blue-400 focus:ring-blue-400/20 transition-all duration-300 hover:bg-black/30"
                       />
                     </div>
                     <div>
@@ -650,7 +650,7 @@ export default function KylePortfolio() {
                         onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                         placeholder="your@email.com"
                         required
-                        className="bg-black/20 border-white/20 text-white placeholder:text-gray-400 focus:border-red-400 focus:ring-red-400/20 transition-all duration-300 hover:bg-black/30"
+                        className="bg-black/20 border-white/20 text-white placeholder:text-gray-400 focus:border-blue-400 focus:ring-blue-400/20 transition-all duration-300 hover:bg-black/30"
                       />
                     </div>
                     <div>
@@ -664,12 +664,12 @@ export default function KylePortfolio() {
                         placeholder="Tell me about your project..."
                         rows={4}
                         required
-                        className="bg-black/20 border-white/20 text-white placeholder:text-gray-400 focus:border-red-400 focus:ring-red-400/20 transition-all duration-300 hover:bg-black/30"
+                        className="bg-black/20 border-white/20 text-white placeholder:text-gray-400 focus:border-blue-400 focus:ring-blue-400/20 transition-all duration-300 hover:bg-black/30"
                       />
                     </div>
                     <Button
                       type="submit"
-                      className="w-full bg-gradient-to-r from-red-500 to-red-600 hover:from-red-600 hover:to-red-700 text-white py-3 transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-red-500/25 group"
+                      className="w-full bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white py-3 transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-blue-500/25 group"
                     >
                       Send Message
                       <MousePointer className="w-4 h-4 ml-2 group-hover:rotate-12 transition-transform" />
@@ -683,7 +683,7 @@ export default function KylePortfolio() {
       </section>
 
       {/* Footer with animated elements */}
-      <footer className="bg-black/80 backdrop-blur-lg border-t border-red-500/20 text-white py-12">
+      <footer className="bg-black/80 backdrop-blur-lg border-t border-blue-500/20 text-white py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center space-y-6">
             <Logo size="lg" />
@@ -731,7 +731,7 @@ export default function KylePortfolio() {
               </a>
             </div>
 
-            <div className="border-t border-red-500/20 pt-8">
+            <div className="border-t border-blue-500/20 pt-8">
               <p className="text-gray-500">© {new Date().getFullYear()} Kyle. All rights reserved.</p>
             </div>
           </div>
