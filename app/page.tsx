@@ -131,45 +131,9 @@ export default function KylePortfolio() {
     </div>
   )
 
-  // Floating social media bar
-  const FloatingSocialBar = () => (
-    <div className="fixed right-6 top-1/2 -translate-y-1/2 z-40 space-y-4">
-      <div className="flex flex-col space-y-3 bg-white/10 backdrop-blur-lg rounded-2xl p-3 border border-white/20">
-        <a
-          href="https://m.me/@Kyle.Cachia"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="w-12 h-12 bg-blue-500/20 rounded-full flex items-center justify-center hover:bg-blue-500/30 transition-all duration-300 hover:scale-110 group"
-          title="Message on Messenger"
-        >
-          <MessageCircle className="w-6 h-6 text-blue-400 group-hover:text-blue-300" />
-        </a>
-        <a
-          href="https://wa.me/35679264233"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="w-12 h-12 bg-green-500/20 rounded-full flex items-center justify-center hover:bg-green-500/30 transition-all duration-300 hover:scale-110 group"
-          title="Message on WhatsApp"
-        >
-          <Phone className="w-6 h-6 text-green-400 group-hover:text-green-300" />
-        </a>
-        <a
-          href="https://www.linkedin.com/in/kyle-cachia-41bbb8252/"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="w-12 h-12 bg-blue-600/20 rounded-full flex items-center justify-center hover:bg-blue-600/30 transition-all duration-300 hover:scale-110 group"
-          title="Connect on LinkedIn"
-        >
-          <Linkedin className="w-6 h-6 text-blue-500 group-hover:text-blue-400" />
-        </a>
-      </div>
-    </div>
-  )
-
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 relative overflow-hidden">
       <FloatingParticles />
-      <FloatingSocialBar />
 
       {/* Animated background gradient */}
       <div
