@@ -593,7 +593,6 @@ export default function KylePortfolio() {
                     href: "mailto:kyle@webdev.com",
                   },
                   { icon: Phone, title: "Phone", value: "+356 79264233", color: "green", href: "tel:+35679264233" },
-                  { icon: MapPin, title: "Location", value: "Valletta, Malta", color: "purple", href: null },
                   {
                     icon: MessageCircle,
                     title: "Messenger",
@@ -602,7 +601,7 @@ export default function KylePortfolio() {
                     href: "https://m.me/@Kyle.Cachia",
                   },
                   {
-                    icon: Phone,
+                    icon: MessageCircle,
                     title: "WhatsApp",
                     value: "Message on WhatsApp",
                     color: "green",
