@@ -25,6 +25,7 @@ import {
   CheckCircle,
   MessageCircle,
   Linkedin,
+  Github,
 } from "lucide-react"
 import Image from "next/image"
 import Logo from "@/components/logo"
@@ -576,6 +577,13 @@ export default function KylePortfolio() {
                     color: "blue",
                     href: "https://www.linkedin.com/in/kyle-cachia-41bbb8252/",
                   },
+                  {
+                    icon: Github,
+                    title: "GitHub",
+                    value: "View my code",
+                    color: "gray",
+                    href: "https://github.com/Cachia36",
+                  },
                 ].map((contact, index) => (
                   <div key={index} className="flex items-center space-x-4 group cursor-pointer">
                     <div
@@ -711,6 +719,15 @@ export default function KylePortfolio() {
                 title="Connect on LinkedIn"
               >
                 <Linkedin className="w-5 h-5 text-blue-500 group-hover:text-blue-400" />
+              </a>
+              <a
+                href="https://github.com/Cachia36"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 bg-gray-500/20 rounded-full flex items-center justify-center hover:bg-gray-500/30 transition-all duration-300 hover:scale-110 group"
+                title="View my code on GitHub"
+              >
+                <Github className="w-5 h-5 text-gray-400 group-hover:text-gray-300" />
               </a>
             </div>
 
