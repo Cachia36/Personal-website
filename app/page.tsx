@@ -222,7 +222,7 @@ export default function KylePortfolio() {
                   <Sparkles className="w-4 h-4 mr-2" />
                   Freelance Web Developer
                 </Badge>
-                <h1 className="text-white leading-tight font-thin text-5xl">
+                <h1 className="text-white leading-tight text-5xl font-light">
                   Web Developer, Video Editor & Technician in Malta – Kyle’s Digital Services{" "}
                   <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-400 via-red-500 to-red-600 animate-gradient-x">
                     No Limits.
