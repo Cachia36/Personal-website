@@ -223,14 +223,13 @@ export default function KylePortfolio() {
                   Freelance Web Developer
                 </Badge>
                 <h1 className="text-white leading-tight text-5xl font-light">
-                  Web Developer, Video Editor & Technician in Malta – Kyle’s Digital Services{" "}
+                  Web Developer, Video Editor & Technician in Malta – Kyle’s Digital Services.{" "}
                   <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-400 via-red-500 to-red-600 animate-gradient-x">
                     No Limits.
                   </span>
                 </h1>
                 <p className="text-xl text-gray-300 leading-relaxed">
-                  I create custom websites for entrepreneurs, professionals, and businesses—responsive, SEO‑friendly,
-                  and built to grow your online presence.
+                  I build responsive, SEO-friendly websites — plus video editing, PC repairs, and custom software solutions for businesses and individuals.
                 </p>
               </div>
               <div className="flex flex-col sm:flex-row gap-4">
@@ -253,7 +252,27 @@ export default function KylePortfolio() {
             <div
               className={`relative ${visibleSections.includes("home") ? "animate-in slide-in-from-right duration-1000" : "opacity-0"}`}
             >
-              <div className="relative group"></div>
+              <div className="relative group">
+                <div className="absolute -inset-1 bg-gradient-to-r from-red-600 to-red-500 rounded-2xl blur opacity-75 group-hover:opacity-100 transition duration-1000 group-hover:duration-200 animate-tilt" />
+                <div className="relative bg-black/80 backdrop-blur-xl rounded-2xl p-8 border border-red-500/20">
+                  <div className="space-y-4">
+                    <div className="flex items-center space-x-2">
+                      <div className="w-3 h-3 bg-red-400 rounded-full animate-pulse" />
+                      <div className="w-3 h-3 bg-yellow-400 rounded-full animate-pulse animation-delay-200" />
+                      <div className="w-3 h-3 bg-green-400 rounded-full animate-pulse animation-delay-400" />
+                    </div>
+                    <div className="space-y-3">
+                      <div className="h-4 bg-gradient-to-r from-red-400 to-red-500 rounded w-3/4 animate-pulse" />
+                      <div className="h-4 bg-gradient-to-r from-red-500 to-red-600 rounded w-1/2 animate-pulse animation-delay-300" />
+                      <div className="h-8 bg-gradient-to-r from-red-500 to-red-600 rounded w-full animate-pulse animation-delay-600" />
+                      <div className="grid grid-cols-2 gap-2">
+                        <div className="h-16 bg-gradient-to-br from-red-400/20 to-red-500/20 rounded animate-pulse animation-delay-900" />
+                        <div className="h-16 bg-gradient-to-br from-red-500/20 to-red-600/20 rounded animate-pulse animation-delay-1200" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
