@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   icons: {
     icon: '/icon.png'
   },
-  description: 'Custom websites for entrepreneurs, professionals, and businesses.',
+  description: 'Professional freelance web designer in Malta helping businesses and professionals get custom websites that look great and attract more customers online.',
   robots: 'index, follow',
   keywords: ['Web Developer Malta',
             'Freelance Web Developer Malta',
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
   metadataBase: new URL('https://v0-kyle-s-landing-page.vercel.app'),
   openGraph: {
     title: 'Kyle Cachia | Freelance Web Developer',
-    description: 'Professional websites tailored for businesses and entrepreneurs.',
+    description: 'Professional freelance web designer in Malta helping businesses and professionals get custom websites that look great and attract more customers online.',
     url: 'https://v0-kyle-s-landing-page.vercel.app',
     siteName: 'Kyle Cachia Portfolio',
     images: [
