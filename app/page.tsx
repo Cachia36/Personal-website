@@ -25,6 +25,8 @@ import {
   CheckCircle,
   MessageCircle,
   Linkedin,
+  Computer,
+  GithubIcon,
 } from "lucide-react"
 import Image from "next/image"
 import Logo from "@/components/logo"
@@ -304,7 +306,19 @@ export default function KylePortfolio() {
                 icon: Smartphone,
                 title: "Mobile-First",
                 desc: "Looks great on any device",
-                color: "orange",
+                color: "green",
+              },
+              {
+                icon: HeadphonesIcon,
+                title: "Ongoing Support",
+                desc: "For updates and maintenance",
+                color: "blue",
+              },
+              {
+                icon: Settings,
+                title: "Video Editing",
+                desc: "Entire video editing solutions",
+                color: "blue",
               },
               {
                 icon: Search,
@@ -313,16 +327,10 @@ export default function KylePortfolio() {
                 color: "yellow",
               },
               {
-                icon: Settings,
-                title: "CMS Integration",
-                desc: "Easy updates with Sanity or Contentful",
-                color: "green",
-              },
-              {
-                icon: HeadphonesIcon,
-                title: "Ongoing Support",
-                desc: "For updates and maintenance",
-                color: "blue",
+                icon: Computer,
+                title: "PC repairs & upgrades",
+                desc: "Repair PCs & upgrade existing systems",
+                color: "red",
               },
             ].map((service, index) => (
               <Card
@@ -553,7 +561,11 @@ export default function KylePortfolio() {
                     color: "red",
                     href: "mailto:kyle@webdev.com",
                   },
-                  { icon: Phone, title: "Phone", value: "+356 79264233", color: "orange", href: "tel:+35679264233" },
+                  { icon: Phone, 
+                    title: "Phone", 
+                    value: "+356 79264233", 
+                    color: "orange", 
+                    href: "tel:+35679264233" },
                   {
                     icon: MessageCircle,
                     title: "Messenger",
@@ -574,6 +586,13 @@ export default function KylePortfolio() {
                     value: "Connect on LinkedIn",
                     color: "blue",
                     href: "https://www.linkedin.com/in/kyle-cachia-41bbb8252/",
+                  },
+                  {
+                    icon: GithubIcon,
+                    title: "GitHub",
+                    value: "GitHub",
+                    color: "gray",
+                    href: "https://www.github.com/Cachia36",
                   },
                 ].map((contact, index) => (
                   <div key={index} className="flex items-center space-x-4 group cursor-pointer">

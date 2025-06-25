@@ -2,9 +2,21 @@ import type { Metadata } from 'next'
 import './globals.css'
 
 export const metadata: Metadata = {
-  title: 'Kyle Cachia | Freelance Web Developer',
+  title: 'Kyle Cachia | Freelance Web Designer & Deverloper Malta',
+  icons: {
+    icon: '/icon.png'
+  },
   description: 'Custom websites for entrepreneurs, professionals, and businesses.',
-  keywords: ['Freelance', 'Web Developer', 'Custom Websites', 'Responsive Design', 'SEO'],
+  robots: 'index, follow',
+  keywords: ['Web Developer Malta',
+            'Freelance Web Developer Malta',
+            'Web Designer Malta',
+            'Freelance Web Designer Malta',
+            'Custom Websites Malta',
+            'SEO Web Design Malta',
+            'Responsive Web Design Malta',
+            'Website Development Malta',
+          ],
   authors: [{ name: 'Kyle Cachia' }],
   generator: 'Next.js',
   metadataBase: new URL('https://v0-kyle-s-landing-page.vercel.app'),
@@ -15,7 +27,7 @@ export const metadata: Metadata = {
     siteName: 'Kyle Cachia Portfolio',
     images: [
       {
-        url: '/og-image.png', // place this in /public
+        url: '/logo_black.png', // place this in /public
         width: 1200,
         height: 630,
         alt: 'Kyle Cachia Freelance Portfolio',
