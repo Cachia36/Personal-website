@@ -507,7 +507,9 @@ export default function KylePortfolio() {
             ].map((testimonial, index) => (
               <Card
                 key={index}
-                className={`border-0 bg-black/40 backdrop-blur-lg border border-white/10 group cursor-pointer transition-all duration-500 hover:scale-105 hover:rotate-1 ${visibleSections.includes("testimonials") ? "animate-in slide-in-from-bottom duration-1000" : "opacity-0"}`}
+                className={`border-0 bg-black/40 backdrop-blur-lg border border-white/10 group cursor-pointer transition-all duration-500 hover:scale-105 hover:rotate-1 
+    ${visibleSections.includes("testimonials") ? "animate-in slide-in-from-bottom duration-1000" : "opacity-0"} 
+    ${index === 2 ? "md:col-span-2 lg:col-span-1" : ""}`}
                 style={{ animationDelay: `${index * 200}ms` }}
               >
                 <CardContent className="p-8 space-y-6">
@@ -560,9 +562,9 @@ export default function KylePortfolio() {
 
           <div className="grid lg:grid-cols-2 gap-12">
             <div
-              className={`space-y-8 ${visibleSections.includes("contact") ? "animate-in slide-in-from-left duration-1000" : "opacity-0"}`}
+              className={`order-2 lg:order-1 space-y-8 ${visibleSections.includes("contact") ? "animate-in slide-in-from-left duration-1000" : "opacity-0"}`}
             >
-              <div className="space-y-6">
+              <div className="grid grid-cols-2 gap-6 lg:grid-cols-1">
                 {[
                   {
                     icon: Mail,
@@ -608,9 +610,7 @@ export default function KylePortfolio() {
                   },
                 ].map((contact, index) => (
                   <div key={index} className="flex items-center space-x-4 group cursor-pointer">
-                    <div
-                      className={`w-12 h-12 bg-${contact.color}-500/20 rounded-full flex items-center justify-center group-hover:scale-110 group-hover:rotate-12 transition-all duration-300`}
-                    >
+                    <div className={`w-12 h-12 bg-${contact.color}-500/20 rounded-full flex items-center justify-center group-hover:scale-110 group-hover:rotate-12 transition-all duration-300`}>
                       <contact.icon className={`w-6 h-6 text-${contact.color}-400`} />
                     </div>
                     <div>
@@ -627,7 +627,9 @@ export default function KylePortfolio() {
                           {contact.value}
                         </a>
                       ) : (
-                        <p className="text-gray-300 group-hover:text-gray-200 transition-colors">{contact.value}</p>
+                        <p className="text-gray-300 group-hover:text-gray-200 transition-colors">
+                          {contact.value}
+                        </p>
                       )}
                     </div>
                   </div>
@@ -636,7 +638,7 @@ export default function KylePortfolio() {
             </div>
 
             <Card
-              className={`border-0 bg-black/40 backdrop-blur-lg border border-white/10 ${visibleSections.includes("contact") ? "animate-in slide-in-from-right duration-1000" : "opacity-0"}`}
+              className={`order-1 lg:order-2 border-0 bg-black/40 backdrop-blur-lg border border-white/10 ${visibleSections.includes("contact") ? "animate-in slide-in-from-right duration-1000" : "opacity-0"}`}
             >
               <CardContent className="p-8">
                 {isSubmitted ? (
