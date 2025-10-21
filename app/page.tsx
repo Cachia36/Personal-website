@@ -407,26 +407,40 @@ export default function KylePortfolio() {
                 className={`border-0 bg-black/40 backdrop-blur-lg border border-white/10 overflow-hidden group cursor-pointer transition-all duration-500 hover:scale-105 hover:-rotate-1 ${visibleSections.includes("portfolio") ? "animate-in slide-in-from-bottom duration-1000" : "opacity-0"}`}
                 style={{ animationDelay: `${index * 200}ms` }}
               >
-                <div
-                  className={`relative h-48 bg-gradient-to-br ${project.gradient} group-hover:scale-110 transition-transform duration-500`}
-                >
-                  <Image
-                    src="/placeholder.svg?height=200&width=400"
-                    alt={project.title}
-                    fill
-                    className="object-cover opacity-80 group-hover:opacity-100 transition-opacity"
-                  />
-                  <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors" />
-                </div>
+                {/* MEDIA AREA: iframe only for Carrozza, placeholder for others */}
+                {project.title === "Carrozza App" ? (
+                  <div className="relative h-48 bg-black">
+                    <iframe
+                      src="https://happy-marmoset-cachia-13eeac70.koyeb.app/"
+                      className="absolute inset-0 w-full h-full border-0"
+                      loading="lazy"
+                      sandbox="allow-scripts allow-same-origin allow-forms allow-popups"
+                    />
+                    <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors pointer-events-none" />
+                  </div>
+                ) : (
+                  <div className={`relative h-48 bg-gradient-to-br ${project.gradient} group-hover:scale-110 transition-transform duration-500`}>
+                    <Image
+                      src="/placeholder.svg?height=200&width=400"
+                      alt={project.title}
+                      fill
+                      className="object-cover opacity-80 group-hover:opacity-100 transition-opacity"
+                    />
+                    <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors" />
+                  </div>
+                )}
+
                 <CardContent className="p-6 space-y-4">
                   <h3 className="text-xl font-semibold text-white group-hover:text-red-300 transition-colors">
                     {project.title}
                   </h3>
                   <p className="text-gray-300">{project.desc}</p>
+
                   <div className="flex items-center space-x-2 text-green-400">
                     <CheckCircle className="w-4 h-4" />
                     <span className="text-sm font-medium">{project.result}</span>
                   </div>
+
                   <div className="flex flex-wrap gap-2">
                     {project.tags.map((tag, tagIndex) => (
                       <Badge
@@ -438,6 +452,8 @@ export default function KylePortfolio() {
                       </Badge>
                     ))}
                   </div>
+
+                  {/* BUTTON: link only for Carrozza */}
                   {project.title === "Carrozza App" ? (
                     <a
                       href="https://happy-marmoset-cachia-13eeac70.koyeb.app/"
