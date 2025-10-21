@@ -334,7 +334,7 @@ export default function KylePortfolio() {
             ].map((service, index) => (
               <Card
                 key={index}
-                className={`border-0 bg-black/40 backdrop-blur-lg border border-white/10 hover:bg-black/60 transition-all duration-500 transform hover:-translate-y-4 hover:rotate-1 group cursor-pointer ${visibleSections.includes("services") ? "animate-in slide-in-from-bottom duration-1000" : "opacity-0"} ${index === 4 ? "md:col-span-2 lg:col-span-1" : ""}`}
+                className={`border-0 bg-black/40 backdrop-blur-lg border border-white/10 hover:bg-black/60 transition-all duration-500 transform hover:-translate-y-4 hover:rotate-1 group cursor-pointer ${visibleSections.includes("services") ? "animate-in slide-in-from-bottom duration-1000" : "opacity-0"}`}
                 style={{ animationDelay: `${index * 200}ms` }}
               >
                 <CardContent className="p-8 text-center space-y-4">
