@@ -28,6 +28,10 @@ import {
   Computer,
   GithubIcon,
 } from "lucide-react"
+import { Montserrat, Orbitron } from "next/font/google"
+  const montserrat = Montserrat({ subsets: ["latin"], weight: ["400", "600", "700"] })
+  const orbitron = Orbitron({ subsets: ["latin"], weight: ["600", "700"] })
+
 import Image from "next/image"
 import Logo from "@/components/logo"
 
@@ -222,12 +226,17 @@ export default function KylePortfolio() {
                   <Sparkles className="w-4 h-4 mr-2" />
                   Freelance Web Developer
                 </Badge>
-                <h1 className="text-white leading-tight text-5xl font-light">
+                <h1
+                  className={`${montserrat.className} text-white leading-tight text-5xl font-semibold`}
+                >
                   Web Developer, Video Editor & Technician in Malta – Kyle’s Digital Services.{" "}
-                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-400 via-red-500 to-red-600 animate-gradient-x">
+                  <span
+                    className={`${orbitron.className} text-transparent bg-clip-text bg-gradient-to-r from-red-400 via-red-500 to-red-600 animate-gradient-x`}
+                  >
                     No Limits.
                   </span>
                 </h1>
+
                 <p className="text-xl text-gray-300 leading-relaxed">
                   I build responsive, SEO-friendly websites — plus video editing, PC repairs, and custom software solutions for businesses and individuals.
                 </p>
