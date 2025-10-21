@@ -1,7 +1,6 @@
 "use client"
 
-import type React from "react"
-import { useState, useEffect } from "react"
+import React, { useMemo, useState, useEffect } from "react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
@@ -29,8 +28,8 @@ import {
   GithubIcon,
 } from "lucide-react"
 import { Montserrat, Orbitron } from "next/font/google"
-  const montserrat = Montserrat({ subsets: ["latin"], weight: ["400", "600", "700"] })
-  const orbitron = Orbitron({ subsets: ["latin"], weight: ["600", "700"] })
+const montserrat = Montserrat({ subsets: ["latin"], weight: ["400", "600", "700"] })
+const orbitron = Orbitron({ subsets: ["latin"], weight: ["600", "700"] })
 
 import Image from "next/image"
 import Logo from "@/components/logo"
@@ -119,27 +118,8 @@ export default function KylePortfolio() {
     setIsMenuOpen(false)
   }
 
-  // Floating particles component
-  const FloatingParticles = () => (
-    <div className="fixed inset-0 pointer-events-none overflow-hidden">
-      {[...Array(20)].map((_, i) => (
-        <div
-          key={i}
-          className="absolute w-2 h-2 bg-red-400 rounded-full opacity-20 animate-pulse"
-          style={{
-            left: `${Math.random() * 100}%`,
-            top: `${Math.random() * 100}%`,
-            animationDelay: `${Math.random() * 3}s`,
-            animationDuration: `${2 + Math.random() * 3}s`,
-          }}
-        />
-      ))}
-    </div>
-  )
-
   return (
     <div className="min-h-screen bg-gradient-to-br from-black via-gray-900 to-black relative overflow-hidden">
-      <FloatingParticles />
 
       {/* Animated background gradient */}
       <div
