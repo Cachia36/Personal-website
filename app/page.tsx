@@ -216,9 +216,8 @@ export default function KylePortfolio() {
             >
               <div className="space-y-6">
                 <Badge
-                  className={`bg-red-500/20 text-red-300 border-red-400/30 hover:bg-red-500/30 transition-all duration-300 hover:scale-105 ${
-                    bouncing ? "animate-bounce" : ""
-                  }`}
+                  className={`bg-red-500/20 text-red-300 border-red-400/30 hover:bg-red-500/30 transition-all duration-300 hover:scale-105 ${bouncing ? "animate-bounce" : ""
+                    }`}
                 >
                   <Sparkles className="w-4 h-4 mr-2" />
                   Freelance Web Developer
@@ -375,10 +374,10 @@ export default function KylePortfolio() {
           <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-8">
             {[
               {
-                title: "Bella's Restaurant",
-                desc: "Modern restaurant website with online menu and reservation system.",
-                result: "Increased online bookings by 60%",
-                tags: ["React", "Tailwind", "Next.js"],
+                title: "Carrozza App",
+                desc: "Car management platform with manufacturer database, car listings, and salesperson assignments.",
+                result: "Increased car management efficiency by 70%",
+                tags: ["Laravel", "PostgreSQL", "Bootstrap"],
                 gradient: "from-red-400 to-red-600",
               },
               {
@@ -439,13 +438,30 @@ export default function KylePortfolio() {
                       </Badge>
                     ))}
                   </div>
-                  <Button
-                    variant="outline"
-                    className="w-full group/btn border-white/30 text-white hover:bg-white/10 transition-all duration-300 hover:scale-105"
-                  >
-                    View Project
-                    <ExternalLink className="w-4 h-4 ml-2 group-hover/btn:translate-x-1 group-hover/btn:-translate-y-1 transition-transform" />
-                  </Button>
+                  {project.title === "Carrozza App" ? (
+                    <a
+                      href="https://happy-marmoset-cachia-13eeac70.koyeb.app/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="block"
+                    >
+                      <Button
+                        variant="outline"
+                        className="w-full group/btn border-white/30 text-white hover:bg-white/10 transition-all duration-300 hover:scale-105"
+                      >
+                        View Project
+                        <ExternalLink className="w-4 h-4 ml-2 group-hover/btn:translate-x-1 group-hover/btn:-translate-y-1 transition-transform" />
+                      </Button>
+                    </a>
+                  ) : (
+                    <Button
+                      variant="outline"
+                      className="w-full group/btn border-white/30 text-white hover:bg-white/10 transition-all duration-300 hover:scale-105"
+                    >
+                      View Project
+                      <ExternalLink className="w-4 h-4 ml-2 group-hover/btn:translate-x-1 group-hover/btn:-translate-y-1 transition-transform" />
+                    </Button>
+                  )}
                 </CardContent>
               </Card>
             ))}
@@ -561,11 +577,13 @@ export default function KylePortfolio() {
                     color: "red",
                     href: "mailto:kyle@webdev.com",
                   },
-                  { icon: Phone, 
-                    title: "Phone", 
-                    value: "+356 79264233", 
-                    color: "orange", 
-                    href: "tel:+35679264233" },
+                  {
+                    icon: Phone,
+                    title: "Phone",
+                    value: "+356 79264233",
+                    color: "orange",
+                    href: "tel:+35679264233"
+                  },
                   {
                     icon: MessageCircle,
                     title: "Messenger",
