@@ -382,8 +382,6 @@ export default function KylePortfolio() {
                 result: "Scalable booking platform with event-driven notifications and integrated external APIs",
                 tags: [".NET 6/7", "Microservices", "GatewayAPI", "RabbitMQ", "MongoDB Atlas", "Azure", "External APIs"],
                 gradient: "from-yellow-400 to-yellow-600",
-                link: "https://maintenance-page-gray-mu.vercel.app/",
-                image: "/cab_booking_preview.png",
               },
               {
                 title: "TechStart Solutions",
@@ -451,7 +449,7 @@ export default function KylePortfolio() {
                     </a>
                   ) : project.title === "Cloud Ticketing App" ? (
                   <a
-                    href="https://cloud-ticket-app-665990973538.europe-west1.run.app/" // replace with your actual hosted link
+                    href="https://cloud-ticket-app-665990973538.europe-west1.run.app/"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="block"
@@ -464,7 +462,7 @@ export default function KylePortfolio() {
                       <ExternalLink className="w-4 h-4 ml-2 group-hover/btn:translate-x-1 group-hover/btn:-translate-y-1 transition-transform" />
                     </Button>
                   </a>
-                ) : project.title === "Cab Booking Platorm" ? (
+                ) : project.title === "Cab Booking Platform" ? (
                   <a
                     href="https://maintenance-page-gray-mu.vercel.app/"
                     target="_blank"
