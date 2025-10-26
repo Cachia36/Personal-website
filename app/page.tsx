@@ -383,13 +383,6 @@ export default function KylePortfolio() {
                 tags: [".NET 6/7", "Microservices", "GatewayAPI", "RabbitMQ", "MongoDB Atlas", "Azure", "External APIs"],
                 gradient: "from-yellow-400 to-yellow-600",
               },
-              {
-                title: "TechStart Solutions",
-                desc: "Professional consulting website with lead generation forms.",
-                result: "Generated 200% more qualified leads",
-                tags: ["Next.js", "Sanity", "TypeScript"],
-                gradient: "from-green-400 to-green-600",
-              },
             ].map((project, index) => (
               <Card
                 key={index}
@@ -477,15 +470,7 @@ export default function KylePortfolio() {
                       <ExternalLink className="w-4 h-4 ml-2 group-hover/btn:translate-x-1 group-hover/btn:-translate-y-1 transition-transform" />
                     </Button>
                   </a>
-                ) : (
-                    <Button
-                      variant="outline"
-                      className="w-full group/btn border-white/30 text-white hover:bg-white/10 transition-all duration-300 hover:scale-105"
-                    >
-                      View Project
-                      <ExternalLink className="w-4 h-4 ml-2 group-hover/btn:translate-x-1 group-hover/btn:-translate-y-1 transition-transform" />
-                    </Button>
-                  )}
+                )}
                 </CardContent>
               </Card>
             ))}
