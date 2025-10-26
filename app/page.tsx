@@ -372,16 +372,18 @@ export default function KylePortfolio() {
               {
                 title: "Cloud Ticketing App",
                 desc: "Cloud helpdesk where users submit tickets with file uploads, and technicians can manage. Built on GCP with serverless processing and secure storage",
-                result: "Automated attachment handling and notifications to technicians when a ticket is sumitted",
+                result: "Automated attachment handling and notifications to technicians when a ticket is submitted",
                 tags: [".NET MVC", "Cloud Functions", "Cloud Storage (Buckets)", "Redis"],
                 gradient: "from-orange-400 to-orange-600",
               },
               {
-                title: "Chic Boutique",
-                desc: "E-commerce website for a local boutique with online shopping cart.",
-                result: "Increased online sales by 50%",
-                tags: ["Shopify", "JavaScript", "Stripe"],
+                title: "CabGo - Microservices Cab Booking",
+                desc: "A distributed, event-driven cab booking system built with Microservices Architecture in .NET. Includes location-based fare calculation, real-time weather integration, and discounts on every 3rd booking. Deployed on Microsoft Azure with a Gateway API, RabbitMQ messaging, and multiple microservices for customers, bookings, payments, fares, and locations.",
+                result: "Scalable booking platform with event-driven notifications and integrated external APIs",
+                tags: [".NET 6/7", "Microservices", "GatewayAPI", "RabbitMQ", "MongoDB Atlas", "Azure", "External APIs"],
                 gradient: "from-yellow-400 to-yellow-600",
+                link: "https://maintenance-page-gray-mu.vercel.app/",
+                image: "/cab_booking_preview.png",
               },
               {
                 title: "TechStart Solutions",
@@ -450,6 +452,21 @@ export default function KylePortfolio() {
                   ) : project.title === "Cloud Ticketing App" ? (
                   <a
                     href="https://cloud-ticket-app-665990973538.europe-west1.run.app/" // replace with your actual hosted link
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block"
+                  >
+                    <Button
+                      variant="outline"
+                      className="w-full group/btn border-white/30 text-white hover:bg-white/10 transition-all duration-300 hover:scale-105"
+                    >
+                      View Project
+                      <ExternalLink className="w-4 h-4 ml-2 group-hover/btn:translate-x-1 group-hover/btn:-translate-y-1 transition-transform" />
+                    </Button>
+                  </a>
+                ) : project.title === "Cab Booking Platorm" ? (
+                  <a
+                    href="https://maintenance-page-gray-mu.vercel.app/"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="block"
