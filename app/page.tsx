@@ -138,7 +138,7 @@ export default function KylePortfolio() {
 
             {/* Desktop Navigation */}
             <div className="hidden md:flex space-x-8">
-              {["home", "services", "portfolio", "testimonials", "contact"].map((section) => (
+              {["home", "services", "Bachelor's Degree", "personal projects", "contact"].map((section) => (
                 <button
                   key={section}
                   onClick={() => scrollToSection(section)}
@@ -165,7 +165,7 @@ export default function KylePortfolio() {
           {isMenuOpen && (
             <div className="md:hidden bg-black/90 backdrop-blur-lg border-t border-red-500/20 animate-in slide-in-from-top duration-300">
               <div className="px-2 pt-2 pb-3 space-y-1">
-                {["home", "services", "portfolio", "testimonials", "contact"].map((section) => (
+                {["home", "services", "Bachelor's Degree", "personal projects", "contact"].map((section) => (
                   <button
                     key={section}
                     onClick={() => scrollToSection(section)}
@@ -231,7 +231,7 @@ export default function KylePortfolio() {
                 </Button>
                 <Button
                   variant="outline"
-                  onClick={() => scrollToSection("portfolio")}
+                  onClick={() => scrollToSection("Bachelor's Degree")}
                   className="border-white/30 text-white hover:bg-white/10 px-8 py-4 text-lg backdrop-blur-sm transition-all duration-300 hover:scale-105 hover:border-red-400"
                 >
                   View My Work
@@ -345,18 +345,18 @@ export default function KylePortfolio() {
         </div>
       </section>
 
-      {/* Portfolio Section with 3D hover effects */}
-      <section id="portfolio" className="py-20 relative">
+      {/* Bachelor's Projects Section with 3D hover effects */}
+      <section id="Bachelor's Degree" className="py-20 relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div
-            className={`text-center space-y-4 mb-16 ${visibleSections.includes("portfolio") ? "animate-in fade-in-50 slide-in-from-bottom duration-1000" : "opacity-0"}`}
+            className={`text-center space-y-4 mb-16 ${visibleSections.includes("Bachelor's Degree") ? "animate-in fade-in-50 slide-in-from-bottom duration-1000" : "opacity-0"}`}
           >
             <Badge className="bg-red-500/20 text-red-300 border-red-400/30 hover:bg-red-500/30 transition-all duration-300 hover:scale-105">
-              Portfolio
+              Projects
             </Badge>
-            <h2 className="text-4xl sm:text-5xl font-bold text-white">Recent Projects</h2>
+            <h2 className="text-4xl sm:text-5xl font-bold text-white">Bachelor's Projects</h2>
             <p className="text-xl text-gray-300 max-w-2xl mx-auto">
-              Take a look at some of the websites I've built for entrepreneurs, professionals, businesses, and projects for my bachelor's in software development
+              Take a look at some of the projects I've built for my Bachelor's degree in software development
             </p>
           </div>
 
@@ -368,6 +368,8 @@ export default function KylePortfolio() {
                 result: "Increased car management efficiency by 70%",
                 tags: ["Laravel", "PostgreSQL", "Bootstrap"],
                 gradient: "from-red-400 to-red-600",
+                grade: "66/66 (100%)(A*)",
+                module_grade: "83/100 (A*)"
               },
               {
                 title: "Cloud Ticket App",
@@ -375,6 +377,8 @@ export default function KylePortfolio() {
                 result: "Automated attachment handling and notifications to technicians when a ticket is submitted",
                 tags: [".NET MVC", "Cloud Functions", "Cloud Storage (Buckets)", "Redis"],
                 gradient: "from-orange-400 to-orange-600",
+                grade: "56/56 (100%) (A*)",
+                module_grade: "86/100 (A*)"
               },
               {
                 title: "CabGo - Microservices Cab Booking",
@@ -382,11 +386,18 @@ export default function KylePortfolio() {
                 result: "Scalable booking platform with event-driven notifications and integrated external APIs",
                 tags: [".NET 6/7", "Microservices", "GatewayAPI", "RabbitMQ", "MongoDB Atlas", "Azure", "External APIs"],
                 gradient: "from-yellow-400 to-yellow-600",
+                grade: "55/61 (90.16%) (A*)",
+                module_grade: "79/100 (A*)"
               },
-            ].map((project, index) => (
+            ].map((project, index, arr) => (
               <Card
                 key={index}
-                className={`border-0 bg-black/40 backdrop-blur-lg border border-white/10 overflow-hidden group cursor-pointer transition-all duration-500 hover:scale-105 hover:-rotate-1 ${visibleSections.includes("portfolio") ? "animate-in slide-in-from-bottom duration-1000" : "opacity-0"}`}
+                className={`
+        border-0 bg-black/40 backdrop-blur-lg border border-white/10 overflow-hidden group cursor-pointer
+        transition-all duration-500 hover:scale-105 hover:-rotate-1
+        ${visibleSections.includes("Bachelor's Degree") ? "animate-in slide-in-from-bottom duration-1000" : "opacity-0"}
+        ${index === arr.length - 1 ? "md:col-span-2 lg:col-span-2 mx-auto max-w-xl" : ""}
+      `}
                 style={{ animationDelay: `${index * 200}ms` }}
               >
                 {/* MEDIA AREA: make Carrozza identical to others */}
@@ -395,8 +406,8 @@ export default function KylePortfolio() {
                     src={project.title === "Carrozza App"
                       ? "/carrozza_app_preview.png"
                       : project.title === "Cloud Ticket App"
-                      ? "/cloud_ticket_app_preview.png"
-                      : "/placeholder.svg?height=200&width=400"}
+                        ? "/cloud_ticket_app_preview.png"
+                        : "/placeholder.svg?height=200&width=400"}
                     alt={project.title}
                     fill
                     className="object-cover group-hover:opacity-100 transition-transform duration-500"
@@ -414,6 +425,11 @@ export default function KylePortfolio() {
                     <span className="text-sm font-medium">{project.result}</span>
                   </div>
 
+                  <div className="space-y-1">
+                    <p className="text-green-400 font-medium">Project Grade: {project.grade}</p>
+                    <p className="text-gray-400 text-sm">Module Grade: {project.module_grade}</p>
+                  </div>
+
                   <div className="flex flex-wrap gap-2">
                     {project.tags.map((tag, tagIndex) => (
                       <Badge
@@ -428,32 +444,32 @@ export default function KylePortfolio() {
 
                   {/* BUTTON: keep Carrozza linked, others plain */}
                   {project.title === "Carrozza App" ? (
-                  <a href="https://carrozzaapp.koyeb.app/" target="_blank" rel="noopener noreferrer" className="block">
+                    <a href="https://carrozzaapp.koyeb.app/" target="_blank" rel="noopener noreferrer" className="block">
+                      <Button variant="outline" className="w-full group/btn border-white/30 text-white hover:bg-white/10 transition-all duration-300 hover:scale-105">
+                        View Project
+                        <ExternalLink className="w-4 h-4 ml-2 group-hover/btn:translate-x-1 group-hover/btn:-translate-y-1 transition-transform" />
+                      </Button>
+                    </a>
+                  ) : project.title === "Cloud Ticket App" ? (
+                    <a href="https://cloud-ticket-app-665990973538.europe-west1.run.app/" target="_blank" rel="noopener noreferrer" className="block">
+                      <Button variant="outline" className="w-full group/btn border-white/30 text-white hover:bg-white/10 transition-all duration-300 hover:scale-105">
+                        View Project
+                        <ExternalLink className="w-4 h-4 ml-2 group-hover/btn:translate-x-1 group-hover/btn:-translate-y-1 transition-transform" />
+                      </Button>
+                    </a>
+                  ) : project.title === "CabGo - Microservices Cab Booking" ? (
+                    <a href="https://maintenance-page-gray-mu.vercel.app/" target="_blank" rel="noopener noreferrer" className="block">
+                      <Button variant="outline" className="w-full group/btn border-white/30 text-white hover:bg-white/10 transition-all duration-300 hover:scale-105">
+                        View Project
+                        <ExternalLink className="w-4 h-4 ml-2 group-hover/btn:translate-x-1 group-hover/btn:-translate-y-1 transition-transform" />
+                      </Button>
+                    </a>
+                  ) : (
                     <Button variant="outline" className="w-full group/btn border-white/30 text-white hover:bg-white/10 transition-all duration-300 hover:scale-105">
                       View Project
                       <ExternalLink className="w-4 h-4 ml-2 group-hover/btn:translate-x-1 group-hover/btn:-translate-y-1 transition-transform" />
                     </Button>
-                  </a>
-                ) : project.title === "Cloud Ticket App" ? (
-                  <a href="https://cloud-ticket-app-665990973538.europe-west1.run.app/" target="_blank" rel="noopener noreferrer" className="block">
-                    <Button variant="outline" className="w-full group/btn border-white/30 text-white hover:bg-white/10 transition-all duration-300 hover:scale-105">
-                      View Project
-                      <ExternalLink className="w-4 h-4 ml-2 group-hover/btn:translate-x-1 group-hover/btn:-translate-y-1 transition-transform" />
-                    </Button>
-                  </a>
-                ) : project.title === "CabGo - Microservices Cab Booking" ? (
-                  <a href="https://maintenance-page-gray-mu.vercel.app/" target="_blank" rel="noopener noreferrer" className="block">
-                    <Button variant="outline" className="w-full group/btn border-white/30 text-white hover:bg-white/10 transition-all duration-300 hover:scale-105">
-                      View Project
-                      <ExternalLink className="w-4 h-4 ml-2 group-hover/btn:translate-x-1 group-hover/btn:-translate-y-1 transition-transform" />
-                    </Button>
-                  </a>
-                ) : (
-                  <Button variant="outline" className="w-full group/btn border-white/30 text-white hover:bg-white/10 transition-all duration-300 hover:scale-105">
-                    View Project
-                    <ExternalLink className="w-4 h-4 ml-2 group-hover/btn:translate-x-1 group-hover/btn:-translate-y-1 transition-transform" />
-                  </Button>
-                )}
+                  )}
 
                 </CardContent>
               </Card>
@@ -462,85 +478,85 @@ export default function KylePortfolio() {
         </div>
       </section>
 
-      {/* Testimonials Section with animated cards */}
-      <section id="testimonials" className="py-20 relative">
+      {/* Personal Projects Section */}
+      <section id="personal projects" className="py-20 relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div
-            className={`text-center space-y-4 mb-16 ${visibleSections.includes("testimonials") ? "animate-in fade-in-50 slide-in-from-bottom duration-1000" : "opacity-0"}`}
+            className={`text-center space-y-4 mb-16 ${visibleSections.includes("personal projects")
+              ? "animate-in fade-in-50 slide-in-from-bottom duration-1000"
+              : "opacity-0"
+              }`}
           >
             <Badge className="bg-red-500/20 text-red-300 border-red-400/30 hover:bg-red-500/30 transition-all duration-300 hover:scale-105">
-              Testimonials
+              Personal Projects
             </Badge>
-            <h2 className="text-4xl sm:text-5xl font-bold text-white">What Clients Say</h2>
+            <h2 className="text-4xl sm:text-5xl font-bold text-white">Personal Projects</h2>
             <p className="text-xl text-gray-300 max-w-2xl mx-auto">
-              Don't just take my word for it - here's what my clients have to say
+              Independent projects I’m currently building to push my skills further.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {[
-              {
-                name: "Anna Smith",
-                role: "Wellness Coach",
-                initials: "AS",
-                quote:
-                  "Kyle built us a sleek, fast site that boosted our bookings by 40%. Great communication and turnaround.",
-                color: "red",
-              },
-              {
-                name: "Marcus Johnson",
-                role: "Restaurant Owner",
-                initials: "MJ",
-                quote:
-                  "Our new website is stunning and functional. Online orders increased by 65% in the first month. Highly recommend Kyle!",
-                color: "orange",
-              },
-              {
-                name: "Sarah Chen",
-                role: "E-commerce Entrepreneur",
-                initials: "SC",
-                quote:
-                  "Kyle's attention to detail is incredible. Our e-commerce site looks amazing and works flawlessly. Sales increased by 50% since launch!",
-                color: "yellow",
-              },
-            ].map((testimonial, index) => (
-              <Card
-                key={index}
-                className={`border-0 bg-black/40 backdrop-blur-lg border border-white/10 group cursor-pointer transition-all duration-500 hover:scale-105 hover:rotate-1 
-    ${visibleSections.includes("testimonials") ? "animate-in slide-in-from-bottom duration-1000" : "opacity-0"} 
-    ${index === 2 ? "md:col-span-2 lg:col-span-1" : ""}`}
-                style={{ animationDelay: `${index * 200}ms` }}
-              >
-                <CardContent className="p-8 space-y-6">
-                  <div className="flex text-yellow-400 group-hover:text-yellow-300 transition-colors">
-                    {[...Array(5)].map((_, i) => (
-                      <Star
-                        key={i}
-                        className="w-5 h-5 fill-current transition-all duration-300 hover:scale-125"
-                        style={{ animationDelay: `${i * 100}ms` }}
-                      />
-                    ))}
-                  </div>
-                  <p className="text-gray-300 italic group-hover:text-gray-200 transition-colors">
-                    "{testimonial.quote}"
-                  </p>
-                  <div className="flex items-center space-x-4">
-                    <div
-                      className={`w-12 h-12 bg-${testimonial.color}-500/20 rounded-full flex items-center justify-center group-hover:scale-110 group-hover:rotate-12 transition-all duration-300`}
+          {/* Centered card */}
+          <div className="flex justify-center">
+            <Card
+              className={`max-w-xl border-0 bg-black/40 backdrop-blur-lg border border-white/10 overflow-hidden group cursor-pointer transition-all duration-500 hover:scale-105 hover:-rotate-1 ${visibleSections.includes("personal projects")
+                ? "animate-in slide-in-from-bottom duration-1000"
+                : "opacity-0"
+                }`}
+            >
+              {/* Media placeholder */}
+              <div className="relative h-48 bg-gradient-to-br from-purple-400 to-purple-600 group-hover:scale-110 transition-transform duration-500">
+                <Image
+                  src="/placeholder.svg?height=200&width=400"
+                  alt="BetWise Preview"
+                  fill
+                  className="object-cover group-hover:opacity-100 transition-transform duration-500"
+                />
+              </div>
+
+              <CardContent className="p-6 space-y-4">
+                <h3 className="text-xl font-semibold text-white group-hover:text-red-300 transition-colors">
+                  BetWise (Work in Progress)
+                </h3>
+                <p className="text-gray-300">
+                  A football betting platform where users can place bets on games. Built with a{" "}
+                  <span className="text-red-400 font-semibold">.NET backend</span> and{" "}
+                  <span className="text-red-400 font-semibold">microservices architecture</span>.
+                  Features include <span className="text-red-400 font-semibold">3 APIs, a Gateway API, and 3 workers</span>{" "}
+                  connected through an <span className="text-red-400 font-semibold">event-driven architecture with RabbitMQ</span>.
+                </p>
+
+                <p className="text-gray-400">
+                  The <span className="text-green-400 font-medium">frontend will be built in React.js</span>,
+                  showcasing my frontend development and UI/UX skills.
+                </p>
+
+                <div className="flex flex-wrap gap-2">
+                  {[".NET", "Microservices", "RabbitMQ", "Gateway API", "Workers", "React.js"].map((tag, idx) => (
+                    <Badge
+                      key={idx}
+                      variant="secondary"
+                      className="bg-white/10 text-gray-300 hover:bg-white/20 transition-all duration-300 hover:scale-105"
                     >
-                      <span className={`text-${testimonial.color}-300 font-semibold`}>{testimonial.initials}</span>
-                    </div>
-                    <div>
-                      <p className="font-semibold text-white group-hover:text-red-300 transition-colors">
-                        {testimonial.name}
-                      </p>
-                      <p className="text-gray-400 text-sm">{testimonial.role}</p>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
+                      {tag}
+                    </Badge>
+                  ))}
+                </div>
+
+                {/* Disabled button */}
+                <Button
+                  variant="outline"
+                  disabled
+                  className="w-full border-white/30 text-gray-400 cursor-not-allowed"
+                >
+                  In Development
+                </Button>
+              </CardContent>
+            </Card>
           </div>
+
+          {/* More to come message */}
+          <p className="text-center text-gray-400 mt-8 italic">More to come...</p>
         </div>
       </section>
 
