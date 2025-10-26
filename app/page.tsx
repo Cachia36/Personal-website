@@ -370,7 +370,7 @@ export default function KylePortfolio() {
                 gradient: "from-red-400 to-red-600",
               },
               {
-                title: "Cloud Ticketing App",
+                title: "Cloud Ticket App",
                 desc: "Cloud helpdesk where users submit tickets with file uploads, and technicians can manage. Built on GCP with serverless processing and secure storage",
                 result: "Automated attachment handling and notifications to technicians when a ticket is submitted",
                 tags: [".NET MVC", "Cloud Functions", "Cloud Storage (Buckets)", "Redis"],
@@ -394,6 +394,8 @@ export default function KylePortfolio() {
                   <Image
                     src={project.title === "Carrozza App"
                       ? "/carrozza_app_preview.png"
+                      : project.title === "Cloud Ticket App"
+                      ? "/cloud_ticket_app_preview.png"
                       : "/placeholder.svg?height=200&width=400"}
                     alt={project.title}
                     fill
@@ -432,7 +434,7 @@ export default function KylePortfolio() {
                       <ExternalLink className="w-4 h-4 ml-2 group-hover/btn:translate-x-1 group-hover/btn:-translate-y-1 transition-transform" />
                     </Button>
                   </a>
-                ) : project.title === "Cloud Ticketing App" ? (
+                ) : project.title === "Cloud Ticket App" ? (
                   <a href="https://cloud-ticket-app-665990973538.europe-west1.run.app/" target="_blank" rel="noopener noreferrer" className="block">
                     <Button variant="outline" className="w-full group/btn border-white/30 text-white hover:bg-white/10 transition-all duration-300 hover:scale-105">
                       View Project
