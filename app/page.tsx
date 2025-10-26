@@ -462,7 +462,7 @@ export default function KylePortfolio() {
                       <ExternalLink className="w-4 h-4 ml-2 group-hover/btn:translate-x-1 group-hover/btn:-translate-y-1 transition-transform" />
                     </Button>
                   </a>
-                ) : project.title === "Cab Booking Platform" ? (
+                ) : project.title === "CabGo - Microservices Cab Booking" ? (
                   <a
                     href="https://maintenance-page-gray-mu.vercel.app/"
                     target="_blank"
