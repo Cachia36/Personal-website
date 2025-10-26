@@ -426,51 +426,33 @@ export default function KylePortfolio() {
 
                   {/* BUTTON: keep Carrozza linked, others plain */}
                   {project.title === "Carrozza App" ? (
-                    <a
-                      href="https://carrozzaapp.koyeb.app/"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="block"
-                    >
-                      <Button
-                        variant="outline"
-                        className="w-full group/btn border-white/30 text-white hover:bg-white/10 transition-all duration-300 hover:scale-105"
-                      >
-                        View Project
-                        <ExternalLink className="w-4 h-4 ml-2 group-hover/btn:translate-x-1 group-hover/btn:-translate-y-1 transition-transform" />
-                      </Button>
-                    </a>
-                  ) : project.title === "Cloud Ticketing App" ? (
-                  <a
-                    href="https://cloud-ticket-app-665990973538.europe-west1.run.app/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="block"
-                  >
-                    <Button
-                      variant="outline"
-                      className="w-full group/btn border-white/30 text-white hover:bg-white/10 transition-all duration-300 hover:scale-105"
-                    >
+                  <a href="https://carrozzaapp.koyeb.app/" target="_blank" rel="noopener noreferrer" className="block">
+                    <Button variant="outline" className="w-full group/btn border-white/30 text-white hover:bg-white/10 transition-all duration-300 hover:scale-105">
+                      View Project
+                      <ExternalLink className="w-4 h-4 ml-2 group-hover/btn:translate-x-1 group-hover/btn:-translate-y-1 transition-transform" />
+                    </Button>
+                  </a>
+                ) : project.title === "Cloud Ticketing App" ? (
+                  <a href="https://cloud-ticket-app-665990973538.europe-west1.run.app/" target="_blank" rel="noopener noreferrer" className="block">
+                    <Button variant="outline" className="w-full group/btn border-white/30 text-white hover:bg-white/10 transition-all duration-300 hover:scale-105">
                       View Project
                       <ExternalLink className="w-4 h-4 ml-2 group-hover/btn:translate-x-1 group-hover/btn:-translate-y-1 transition-transform" />
                     </Button>
                   </a>
                 ) : project.title === "CabGo - Microservices Cab Booking" ? (
-                  <a
-                    href="https://maintenance-page-gray-mu.vercel.app/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="block"
-                  >
-                    <Button
-                      variant="outline"
-                      className="w-full group/btn border-white/30 text-white hover:bg-white/10 transition-all duration-300 hover:scale-105"
-                    >
+                  <a href="https://maintenance-page-gray-mu.vercel.app/" target="_blank" rel="noopener noreferrer" className="block">
+                    <Button variant="outline" className="w-full group/btn border-white/30 text-white hover:bg-white/10 transition-all duration-300 hover:scale-105">
                       View Project
                       <ExternalLink className="w-4 h-4 ml-2 group-hover/btn:translate-x-1 group-hover/btn:-translate-y-1 transition-transform" />
                     </Button>
                   </a>
+                ) : (
+                  <Button variant="outline" className="w-full group/btn border-white/30 text-white hover:bg-white/10 transition-all duration-300 hover:scale-105">
+                    View Project
+                    <ExternalLink className="w-4 h-4 ml-2 group-hover/btn:translate-x-1 group-hover/btn:-translate-y-1 transition-transform" />
+                  </Button>
                 )}
+
                 </CardContent>
               </Card>
             ))}
