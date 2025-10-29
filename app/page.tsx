@@ -492,8 +492,7 @@ export default function KylePortfolio() {
             </Badge>
             <h2 className="text-4xl sm:text-5xl font-bold text-white">Personal Projects</h2>
             <p className="text-xl text-gray-300 max-w-2xl mx-auto">
-              Personal projects I’m currently building to push my skills further. These where created with the 
-              intent of gaining experience using popular technologies and to learn.<br><br>
+              Personal projects I’m currently building to push my skills further. These where created with the intent of gaining experience using popular technologies and to learn.<br><br>
               Independently learning{" "}
                   <span className="text-red-400 font-semibold">React.js</span> and{" "}
                   <span className="text-red-400 font-semibold">TypeScript</span>.
