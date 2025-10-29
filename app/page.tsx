@@ -407,6 +407,8 @@ export default function KylePortfolio() {
                       ? "/carrozza_app_preview.png"
                       : project.title === "Cloud Ticket App"
                         ? "/cloud_ticket_app_preview.png"
+                        : project.title === "CabGo - Microservices Cab Booking"
+                        ? "/CabGo_preview.png"
                         : "/placeholder.svg?height=200&width=400"}
                     alt={project.title}
                     fill
@@ -458,7 +460,7 @@ export default function KylePortfolio() {
                       </Button>
                     </a>
                   ) : project.title === "CabGo - Microservices Cab Booking" ? (
-                    <a href="https://maintenance-page-gray-mu.vercel.app/" target="_blank" rel="noopener noreferrer" className="block">
+                    <a href="https://cabbookingfrontendkc.azurewebsites.net/" target="_blank" rel="noopener noreferrer" className="block">
                       <Button variant="outline" className="w-full group/btn border-white/30 text-white hover:bg-white/10 transition-all duration-300 hover:scale-105">
                         View Project
                         <ExternalLink className="w-4 h-4 ml-2 group-hover/btn:translate-x-1 group-hover/btn:-translate-y-1 transition-transform" />
