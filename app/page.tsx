@@ -420,7 +420,7 @@ export default function KylePortfolio() {
                   </h3>
                   <p className="text-gray-300">{project.desc}</p>
 
-                  <div className="flex items-center space-x-2 text-green-400">
+                  <div className="flex items-center space-x-2 text-red-400">
                     <CheckCircle className="w-4 h-4" />
                     <span className="text-sm font-medium">{project.result}</span>
                   </div>
@@ -492,7 +492,13 @@ export default function KylePortfolio() {
             </Badge>
             <h2 className="text-4xl sm:text-5xl font-bold text-white">Personal Projects</h2>
             <p className="text-xl text-gray-300 max-w-2xl mx-auto">
-              Independent projects I’m currently building to push my skills further.
+              Personal projects I’m currently building to push my skills further. These where created with the intent of gaining experience using popular technologies and to learn.
+              <p className="text-xl text-gray-300 max-w-2xl mx-auto">
+              Independently learning{" "}
+                  <span className="text-red-400 font-semibold">React.js</span> and{" "}
+                  <span className="text-red-400 font-semibold">TypeScript</span>.
+              As well as learning <span className="text-red-400 font-semibold">JWT Authentication</span>.
+              </p>
             </p>
           </div>
 
